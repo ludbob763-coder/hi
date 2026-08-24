@@ -1,8 +1,6 @@
-# DITTNAMN basrepo
+# Ludwig basrepo
 
 Välkommen till webbserverprogrammering. Detta är ditt repo som vi jobber med i kursen! Den här guiden hjälper dig att installera alla nödvändiga verktyg och komma igång med utvecklingsmiljön i VS Code.
-
-**Börja med att ersätta DITTNAMN ovan med ditt namn och ta sedan bort denna rad.**
 
 ## Filer du får med
 
