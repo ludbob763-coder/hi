@@ -33,7 +33,19 @@ app.get(`/name/:username`, (req, res) => {
   res.send(`You be Rizzlord ${username}`);
 });
 app.get(`/monster/add/list`, (req, res) => {
-  res.send(`Hercules, Terra, Muskul`);
+  const monsters = ["Hercules", "Terra", "Muskul"];
+
+  const sortOrder = req.query.sort;
+
+  let sortedMonsters = [...monsters];
+
+  if (sortOrder === "asc") {
+    sortedMonsters.sort();
+  } else if (sortOrder === "desc") {
+    sortedMonsters.sort().reverse();
+  }
+
+  res.send(sortedMonsters.join(", "));
 });
 app.get(`/monster/add/:num`, (req, res) => {
   const num = req.params.num;
