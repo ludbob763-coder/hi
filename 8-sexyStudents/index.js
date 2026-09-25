@@ -1,10 +1,12 @@
 const express = require("express");
+const morgan = require("morgan");
 const port = 3000;
 const app = express();
 
-app.listen(port, () => {
-  console.log(`Servern startad. Port: ` + port);
-});
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get(`/`, (req, res) => {
   console.log(`En klient är online`);
@@ -50,4 +52,16 @@ app.get(`/monster/add/list`, (req, res) => {
 app.get(`/monster/add/:num`, (req, res) => {
   const num = req.params.num;
   res.send(`${num} monster har lagts till`);
+});
+app.post("/hit-me", (req, res) => {
+  console.log("Mottagen JSON-data i terminalen:", req.body);
+  res.send("OK");
+});
+
+app.use((req, res) => {
+  res.status(404).send(`ERRROROROORORRRRRr`);
+});
+
+app.listen(port, () => {
+  console.log(`Servern startad. Port: ` + port);
 });

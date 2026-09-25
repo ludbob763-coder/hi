@@ -1,0 +1,8 @@
+POST https://fantastic-journey-r4vvvq56x6v62xjpx-3000.app.github.dev/hit-me HTTP/1.1
+Content-Type:  application/json
+
+{
+  "name": "Ludwig",
+  "role": "Matros",
+  "level":"43"
+}
