@@ -21,6 +21,10 @@ app.get("/lists", (req, res) => {
   res.render("lists");
 });
 
+app.get("/pug-resort", (req, res) => {
+  res.render("pug-resort");
+});
+
 app.get("/creative", (req, res) => {
   res.render("creative");
 });
