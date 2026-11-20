@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Formulär
+  body 
+    form(action="/form", method="POST")
+      fieldset 
+        legend Personuppgifter 
+        label Förnamn: 
+          input(type="text", name="firstName", required)
+        label E-postadress: 
+          input(type="email", name="userEmail", required)
+        legend Övrig kommentar 
+        textarea(name="commentText", rows="3", placeholder="Skriv din kommentar här...")
+        label
+          input(type="submit", value="Skicka")
+           
